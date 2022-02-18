@@ -8,9 +8,6 @@ on:
   pull_request:
     branches: [ main ]
 
-env:
-  PROJECT_NAME: ${GITHUB_REPOSITORY#*/}
-
 jobs:
   set_docker:
     runs-on: ubuntu-latest
@@ -20,7 +17,7 @@ jobs:
     - name: Set DOCKER_REPO
       id: set_docker_repo
       run: |
-        echo "::set-output name=DOCKER_REPO::${{ secrets.DOCKER_HUB_ID }}/${{ env.PROJECT_NAME }}"
+        echo "::set-output name=DOCKER_REPO::${{ secrets.DOCKER_HUB_ID }}/${GITHUB_REPOSITORY#*/}"
   
   build:
     runs-on: ubuntu-latest
