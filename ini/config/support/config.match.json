@@ -1,8 +1,0 @@
-{
-    "$schema": "./config.schema.json",
-    "ProjectLogoPath": "./ini/readme_logo.png",
-    "ProjectTagline": "cool-template-ubuntu-tagline",
-    "GitHubAccount": "armck-hub",
-    "StackShareAccount": "armck-hub",
-    "CodeCovAccount": "armck-hub"
-}

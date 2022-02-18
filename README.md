@@ -9,7 +9,7 @@
     <p>
     <!-- Shields -->
         <a href="https://github.com/armck-hub/template-ubuntu/LICENSE">
-            <img alt="License" src="https://img.shields.io/github/license/ARMcK-hub/template-ubuntu.svg" />
+            <img alt="License" src="https://img.shields.io/github/license/armck-hub/template-ubuntu.svg" />
         </a>
         <a href="https://github.com/armck-hub/template-ubuntu/actions">
             <img alt="Tests Passing" src="https://github.com/armck-hub/template-ubuntu/workflows/CI/badge.svg" />
