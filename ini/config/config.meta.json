@@ -3,6 +3,7 @@
     "ProjectLogoPath":  "./ini/readme_logo.png",
     "ProjectTagline":  "cool-template-ubuntu-tagline",
     "GitHubAccount":  "armck-hub",
+    "DockerHubAccount":  "armck",
     "StackShareAccount":  "armck-hub",
     "CodeCovAccount":  "armck-hub"
 }

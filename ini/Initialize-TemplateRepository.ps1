@@ -21,7 +21,7 @@ $Meta = Get-Content $MetaFile | ConvertFrom-Json
 
 $ProjectName = (Get-Item $RootPath).Name
 $ReadmeFile = (Get-ChildItem $RootPath -Filter "*README.md").FullName
-
+$CiFile = (Get-ChildItem $RootPath -Recurse -Filter "*ci.yml").FullName
 
 function ReplaceContents {
     # places contents in a given file
@@ -74,6 +74,12 @@ ReplaceContents -JobName "GitHubAccount" `
     -OldText ("{0}/{1}" -f $Meta.GitHubAccount, $ProjectName) `
     -NewText ("{0}/{1}" -f $Config.GitHubAccount, $ProjectName)
 
+# replace dockerhub account
+ReplaceContents -JobName "DockerHubAccount" `
+    -FilePath $CiFile `
+    -OldText $Meta.DockerHubAccount `
+    -NewText $Config.DockerHubAccount
+
 # replace ProjectName everywhere except in ini directory
 $TemplateFiles = (Get-ChildItem $RootPath -Exclude "ini") | Get-ChildItem -File -Recurse
 
@@ -83,7 +89,6 @@ foreach ($File in $TemplateFiles) {
         -OldText $TemplateProjectName `
         -NewText $ProjectName
 }
-
 
 # Replacing config.meta for next interation
 $Config | ConvertTo-Json  | Set-Content $MetaFile
