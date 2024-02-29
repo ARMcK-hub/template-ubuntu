@@ -1,5 +1,5 @@
 
-FROM armck/ubuntu-base:latest
+FROM armck/ubuntu:latest
 
 # ----- Environment Setup -----
 
